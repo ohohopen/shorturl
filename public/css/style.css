@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html,
+body {
+	text-align: center;
+	font-family: "Noto Sans TC", sans-serif;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.box {
+}
+.container {
+	border: 1px solid #ccc;
+	width: 600px;
+	box-sizing: border-box;
+	padding: 30px;
+}
+img {
+	max-width: 150px;
+	margin: 30px auto 70px;
+}
+input {
+	border: 0;
+	background-color: #eee;
+	color: #888;
+	padding: 10px;
+	width: 100%;
+}
+.successBlock h3,
+.successBlock a {
+	text-align: left;
+	display: block;
+}
+.successBlock button {
+	margin-top: 30px;
+}
