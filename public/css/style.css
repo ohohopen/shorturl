@@ -69,5 +69,5 @@ form.was-validated input:invalid ~ .invalidFeedback {
 	top: -500px;
 }
 .copied {
-	opacity: none;
+	opacity: 0;
 }
