@@ -19,6 +19,26 @@ app.get("/", (req, res) => {
 		.catch((error) => console.log(error));
 });
 
+//新增一筆網址和縮址的配對資料並重新render進最後一筆(也就是最新的)資料
+app.post("/shorturl/new", (req, res) => {
+	const address = req.body.address;
+	const randomString = randomStr();
+	ShortUrl.create({
+		address: address,
+		shorten: randomString,
+	})
+		.then(() => {
+			ShortUrl.find()
+				.then((shorturls) => {
+					const pop = shorturls.pop();
+					// console.log("pop=", pop);
+					res.render("success", { shorturls: pop.toJSON() });
+				})
+				.catch((error) => console.log(error));
+		})
+		.catch((error) => console.log(error));
+});
+
 app.listen(port, () => {
 	console.log("app is connecting.");
 });
