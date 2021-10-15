@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "address": "https://google.com",
+      "shorten": "xxxxx"
+    },
+    {
+      "address": "https://youtube.com",
+      "shorten": "yyyyy"
+    },
+    {
+      "address": "https://facebook.com",
+      "shorten": "zzzzz"
+    }
+  ]
+}
