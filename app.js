@@ -18,6 +18,16 @@ app.get("/", (req, res) => {
 		})
 		.catch((error) => console.log(error));
 });
+//短網址路由，以shorten找出與其配對的原網址，再轉頁至該網址
+app.get("/:shorten", (req, res) => {
+	const shorten = req.params.shorten;
+	ShortUrl.findOne({ shorten })
+		.lean()
+		.then((shorturls) => {
+			res.redirect(shorturls.address);
+		})
+		.catch((error) => console.log(error));
+});
 
 //新增一筆網址和縮址的配對資料並重新render進最後一筆(也就是最新的)資料
 app.post("/shorturl/new", (req, res) => {

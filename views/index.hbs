@@ -1,18 +1,29 @@
-<form action="/shorturl/new" method="post" >
+<form action="/shorturl/new" method="post" novalidate>
   <div class="shortBlock">
     <div class="form-group">
-      <input type="text" placeholder="Input URL here" name="address" >
+      <input type="text" placeholder="Input URL here" name="address" required>
+      <span class="invalidFeedback">請填寫網址</span>
     </div>
-      {{#each shorturls}}
+      {{!-- {{#each shorturls}}
         <section>
           <a href="/{{this.shorten}}">
             localhost:3000/{{this.shorten}}   ({{this.address}})
           </a>
         </section>
-      {{/each}}
+      {{/each}} --}}
 
     <div class="form-group"> 
       <button class="btn btn-outline-primary" style="width:50%">Shorten</button>  
     </div>
   </div>
 </form>
+<script>
+  const form = document.querySelector('form')
+  form.addEventListener('submit',function(event){
+    form.classList.add("was-validated");
+    if(!form.checkValidity()){
+      event.preventDefault();
+      event.stopPropagation();
+    }
+  })
+</script>
