@@ -39,3 +39,18 @@ input {
 .successBlock button {
 	margin-top: 30px;
 }
+
+form.was-validated input:valid {
+	border: 1px solid green;
+}
+form.was-validated input:invalid {
+	border: 1px solid red;
+}
+.invalidFeedback {
+	display: none;
+}
+form.was-validated input:invalid ~ .invalidFeedback {
+	text-align: left;
+	color: red;
+	display: block;
+}
