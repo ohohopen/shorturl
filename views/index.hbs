@@ -1,8 +1,16 @@
-<form action="/shorturl" method="post">
+<form action="/shorturl/new" method="post" >
   <div class="shortBlock">
     <div class="form-group">
-      <input type="text" placeholder="Input URL here" name="webUrl">
+      <input type="text" placeholder="Input URL here" name="address" >
     </div>
+      {{#each shorturls}}
+        <section>
+          <a href="/{{this.shorten}}">
+            localhost:3000/{{this.shorten}}   ({{this.address}})
+          </a>
+        </section>
+      {{/each}}
+
     <div class="form-group"> 
       <button class="btn btn-outline-primary" style="width:50%">Shorten</button>  
     </div>
