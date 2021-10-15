@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const shortUrlSchema = new Schema({
-	adderss: {
+	address: {
+		type: String,
+		required: true,
+	},
+	shorten: {
 		type: String,
 		required: true,
 	},
